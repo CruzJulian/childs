@@ -1,0 +1,55 @@
+---
+title: "principal"
+output: word_document
+date: '2022-05-18'
+---
+
+
+Vamos a analizar un conjunto de datos. Primero todo y luego por partes.
+
+
+El análisis consiste en obtener una tabla descriptiva y un gráfico ggplot.
+
+Lo haremos con las funciones más simples para entender mejor las cosas.
+
+
+```{r, echo = FALSE, message = FALSE}
+library("dplyr")
+library("ggplot2")
+library("tidyr")
+library("knitr")
+library("readr")
+library("stringr")
+
+```
+
+
+```{r, echo = FALSE, message = FALSE}
+opts_chunk$set(echo = FALSE, message = FALSE)
+
+```
+
+```{r}
+read_lines("rmd/template.rmd") %>% 
+  paste(collapse = "\n") -> template
+
+```
+
+```{r}
+diamonds %>% 
+  pull(cut) %>% 
+  unique %>% 
+  as.character() -> categories
+
+str_replace(template, "CATEGORIA", categories) %>% 
+  paste(collapse = "\n") %>% 
+  write_lines("rmd/child_file.rmd")
+
+```
+
+
+```{r, child="rmd/child_file.rmd"}
+
+```
+
+

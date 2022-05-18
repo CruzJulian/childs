@@ -1,0 +1,170 @@
+
+```{r}
+current_categ <- "Ideal"
+
+```
+
+# Análisis la categoría `r current_categ`
+
+A continuación se muestra el análisis de la categoría `r current_categ` de la variable _corte_ de los diamantes.
+
+## Tabla de medias
+
+```{r}
+diamonds %>% 
+  filter(cut == current_categ) %>% 
+  summarise(across(where(is.numeric), mean)) %>% 
+  gather("Variable", "Media") %>% 
+  kable
+  
+```
+
+## Boxplot de interés
+
+```{r}
+diamonds %>% 
+  filter(cut == current_categ) %>%
+  ggplot +
+  aes(x = color, y = price) +
+  geom_boxplot()
+  
+```
+
+
+
+
+```{r}
+current_categ <- "Premium"
+
+```
+
+# Análisis la categoría `r current_categ`
+
+A continuación se muestra el análisis de la categoría `r current_categ` de la variable _corte_ de los diamantes.
+
+## Tabla de medias
+
+```{r}
+diamonds %>% 
+  filter(cut == current_categ) %>% 
+  summarise(across(where(is.numeric), mean)) %>% 
+  gather("Variable", "Media") %>% 
+  kable
+  
+```
+
+## Boxplot de interés
+
+```{r}
+diamonds %>% 
+  filter(cut == current_categ) %>%
+  ggplot +
+  aes(x = color, y = price) +
+  geom_boxplot()
+  
+```
+
+
+
+
+```{r}
+current_categ <- "Good"
+
+```
+
+# Análisis la categoría `r current_categ`
+
+A continuación se muestra el análisis de la categoría `r current_categ` de la variable _corte_ de los diamantes.
+
+## Tabla de medias
+
+```{r}
+diamonds %>% 
+  filter(cut == current_categ) %>% 
+  summarise(across(where(is.numeric), mean)) %>% 
+  gather("Variable", "Media") %>% 
+  kable
+  
+```
+
+## Boxplot de interés
+
+```{r}
+diamonds %>% 
+  filter(cut == current_categ) %>%
+  ggplot +
+  aes(x = color, y = price) +
+  geom_boxplot()
+  
+```
+
+
+
+
+```{r}
+current_categ <- "Very Good"
+
+```
+
+# Análisis la categoría `r current_categ`
+
+A continuación se muestra el análisis de la categoría `r current_categ` de la variable _corte_ de los diamantes.
+
+## Tabla de medias
+
+```{r}
+diamonds %>% 
+  filter(cut == current_categ) %>% 
+  summarise(across(where(is.numeric), mean)) %>% 
+  gather("Variable", "Media") %>% 
+  kable
+  
+```
+
+## Boxplot de interés
+
+```{r}
+diamonds %>% 
+  filter(cut == current_categ) %>%
+  ggplot +
+  aes(x = color, y = price) +
+  geom_boxplot()
+  
+```
+
+
+
+
+```{r}
+current_categ <- "Fair"
+
+```
+
+# Análisis la categoría `r current_categ`
+
+A continuación se muestra el análisis de la categoría `r current_categ` de la variable _corte_ de los diamantes.
+
+## Tabla de medias
+
+```{r}
+diamonds %>% 
+  filter(cut == current_categ) %>% 
+  summarise(across(where(is.numeric), mean)) %>% 
+  gather("Variable", "Media") %>% 
+  kable
+  
+```
+
+## Boxplot de interés
+
+```{r}
+diamonds %>% 
+  filter(cut == current_categ) %>%
+  ggplot +
+  aes(x = color, y = price) +
+  geom_boxplot()
+  
+```
+
+
+

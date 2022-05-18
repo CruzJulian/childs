@@ -1,0 +1,34 @@
+
+```{r}
+current_categ <- "CATEGORIA"
+
+```
+
+# Análisis la categoría `r current_categ`
+
+A continuación se muestra el análisis de la categoría `r current_categ` de la variable _corte_ de los diamantes.
+
+## Tabla de medias
+
+```{r}
+diamonds %>% 
+  filter(cut == current_categ) %>% 
+  summarise(across(where(is.numeric), mean)) %>% 
+  gather("Variable", "Media") %>% 
+  kable
+  
+```
+
+## Boxplot de interés
+
+```{r}
+diamonds %>% 
+  filter(cut == current_categ) %>%
+  ggplot +
+  aes(x = color, y = price) +
+  geom_boxplot()
+  
+```
+
+
+
